@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad Educativa PCEI "Albert Einstein"</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Kaushan+Script&family=Lato:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #F9D829;
+            --secondary-red: #EF0F0B;
+            --text-black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #f5f5f5;
+            --gray-medium: #666;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-black);
+        }
+
+        .logo span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-black);
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s;
+            z-index: 1001;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .close-menu {
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .mobile-links {
+            list-style: none;
+        }
+
+        .mobile-links li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-links a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .hero {
+            margin-top: 70px;
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .highlight {
+            color: var(--primary-yellow);
+            font-family: 'Kaushan Script', cursive;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-yellow);
+            color: var(--text-black);
+        }
+
+        .btn-primary:hover {
+            background: #e5c41f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--text-black);
+        }
+
+        .mission {
+            padding: 5rem 5%;
+            background: var(--gray-light);
+        }
+
+        .section-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary-yellow);
+        }
+
+        .mission-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .programs {
+            padding: 5rem 5%;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            border-top: 4px solid var(--primary-yellow);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-card h3 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-black);
+        }
+
+        .rector {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, #f5e056 100%);
+        }
+
+        .rector-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .rector-image {
+            width: 100%;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .rector-info h3 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rector-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray-medium);
+        }
+
+        .titles-list {
+            list-style: none;
+        }
+
+        .titles-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .titles-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .services {
+            padding: 5rem 5%;
+            background: var(--gray-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            background: var(--primary-yellow);
+        }
+
+        .stats {
+            padding: 5rem 5%;
+            background: var(--text-black);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 3rem;
+            color: var(--primary-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
+            padding: 5rem 5%;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+        }
+
+        .contact-info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-item h4 {
+            font-family: 'Exo 2', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--text-black);
+            color: var(--white);
+            padding: 3rem 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .rector-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">UE <span>Albert Einstein</span></div>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="oferta.html">Oferta Educativa</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">UE <span>Einstein</span></div>
+            <button class="close-menu" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="inicio.html" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="conocenos.html" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="oferta".html onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="servicios.html" onclick="toggleMenu()">Servicios</a></li>
+            <li><a href="aula.html" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="contacto.html" onclick="toggleMenu()">Contáctanos</a></li>
+        </ul>
+    </div>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Bienvenidos<br>al <span class="highlight">ÉXITO</span></h1>
+            <div class="hero-buttons">
+                <a href="#oferta" class="btn btn-primary">Aprueba el Ciclo Básico</a>
+                <a href="#oferta" class="btn btn-primary">Aprueba el Bachillerato</a>
+                <a href="#aula" class="btn btn-secondary">Accede al Aula Virtual</a>
+                <img src="path/to/image.jpg" alt="Description" />
+            </div>
+        </div>
+    </section>
+
+    <section class="mission" id="conocenos">
+        <h2 class="section-title">Nuestra Misión</h2>
+        <div class="mission-content">
+            <p>La institución proyecta brindar una formación integral de calidad basada en un modelo constructivista
+                humanista a través de la modalidad semipresencial y a Distancia-virtual, que permita desarrollar los
+                niveles de educación general básica superior y bachillerato general unificado en ciencias y
+                especializaciones técnicas en los educandos, descubriendo sus competencias, habilidades, destrezas y
+                actitudes fundamentadas en valores, principios éticos y morales.</p>
+        </div>
+    </section>
+
+    <section class="programs" id="oferta">
+        <h2 class="section-title">Oferta Académica</h2>
+        <div class="programs-grid">
+            <div class="program-card">
+                <h3>Ciclo Básico en 11 meses</h3>
+                <p>El servicio educativo de Básica Superior Intensiva está dirigido a jóvenes y adultos de 15 años y más
+                    que no han concluido 8vo, 9no y 10mo de Educación General Básica.</p>
+            </div>
+            <div class="program-card">
+                <h3>Bachillerato Acelerado</h3>
+                <p>Está dirigido a personas de 18 años y más que se encuentran en plena edad productiva y no pueden
+                    insertarse laboralmente por no tener el título de bachiller, esta población puede finalizar su
+                    educación en 18 meses, es decir 5 meses cada año más un mes de propedéutico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rector">
+        <div class="rector-content">
+            <div class="rector-image"></div>
+            <div class="rector-info">
+                <h3>Dra. Mg. Sc. Gladys Gavilanes Pérez</h3>
+                <h4>RECTORA</h4>
+                <h5><strong>Títulos Obtenidos</strong></h5>
+                <ul class="titles-list">
+                    <li>Magister en Educación a Distancia</li>
+                    <li>Diploma Superior en Tecnologías para la Gestión y Práctica Docente</li>
+                    <li>Diploma Superior en Gestión de Proyectos en Línea y Educación a Distancia</li>
+                    <li>Doctora en Psicología Infantil y Educación Parvularia</li>
+                    <li>Licenciada en Ciencias de la Educación Especialidad Psicología Infantil</li>
+                    <li>Profesora en Psicología Infantil y Educación Parvularia</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h2 class="section-title">Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Orientación Educativa en Valores</h3>
+            </div>
+            <div class="service-card">
+                <h3>Biblioteca Virtual y Presencial</h3>
+            </div>
+            <div class="service-card">
+                <h3>Laboratorio Electromecánica Automotriz</h3>
+            </div>
+            <div class="service-card">
+                <h3>Laboratorio de Industria de la Confección</h3>
+            </div>
+            <div class="service-card">
+                <h3>Laboratorio de Ciencias</h3>
+            </div>
+            <div class="service-card">
+                <h3>Escuela-Taller de Emprendimientos</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>+1,200</h3>
+                <p>Estudiantes Graduados</p>
+            </div>
+            <div class="stat-item">
+                <h3>+12</h3>
+                <p>Años de Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <h4>Ubicación</h4>
+                    <p>Cotopaxi – Latacunga<br>Avenida Eloy Alfaro y General Julio Andrade</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Teléfonos</h4>
+                    <p>098-765-4321<br>032-809-181</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>Email</h4>
+                    <p>info@uealberteinstein.edu.ec</p>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre *" required>
+                <input type="email" placeholder="Email *" required>
+                <textarea rows="5" placeholder="Mensaje *" required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Enlaces de interés</h3>
+                <ul class="footer-links">
+                    <li><a href="#conocenos">Conócenos</a></li>
+                    <li><a href="#oferta">Oferta Educativa</a></li>
+                    <li><a href="#aula">Aula Virtual</a></li>
+                    <li><a href="#contacto">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>096-364-4761<br> 032-809-181</p>
+                <p>info@uealberteinstein.edu.ec</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Unidad Educativa PCEI "Albert Einstein" - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos - Unidad Educativa PCEI "Albert Einstein"</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Kaushan+Script&family=Lato:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #F9D829;
+            --secondary-red: #EF0F0B;
+            --text-black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #f5f5f5;
+            --gray-medium: #666;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-black);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-yellow);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-black);
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s;
+            z-index: 1001;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .close-menu {
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .mobile-links {
+            list-style: none;
+        }
+
+        .mobile-links li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-links a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .page-header {
+            margin-top: 70px;
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, #f5e056 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: var(--text-black);
+        }
+
+        .contact-info-section {
+            padding: 5rem 5%;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top: 4px solid var(--primary-yellow);
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-card h3 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-black);
+        }
+
+        .contact-detail {
+            margin-bottom: 1rem;
+        }
+
+        .contact-detail h4 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.1rem;
+            color: var(--gray-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-black);
+        }
+
+        .contact-detail a {
+            color: var(--text-black);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-detail a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .location-section {
+            padding: 5rem 5%;
+            background: var(--gray-light);
+        }
+
+        .section-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary-yellow);
+        }
+
+        .location-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-map {
+            width: 100%;
+            height: 400px;
+            background: var(--gray-medium);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .form-section {
+            padding: 5rem 5%;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-black);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .required {
+            color: var(--secondary-red);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primary-yellow);
+            color: var(--text-black);
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #e5c41f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 216, 41, 0.4);
+        }
+
+        footer {
+            background: var(--text-black);
+            color: var(--white);
+            padding: 3rem 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">UE <span>Albert Einstein</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                <li><a href="contacto.html" class="active">Contáctanos</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">UE <span>Einstein</span></div>
+            <button class="close-menu" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="index.html" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="conocenos.html" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="oferta-educativa.html" onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="aula-virtual.html" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="contacto.html" onclick="toggleMenu()">Contáctanos</a></li>
+        </ul>
+    </div>
+
+    <section class="page-header">
+        <div>
+            <h1>Comunícate con nosotros</h1>
+            <p>Resolvemos tus dudas</p>
+        </div>
+    </section>
+
+    <section class="contact-info-section">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Llámanos</h3>
+                <div class="contact-detail">
+                    <h4>Asesoría Educativa</h4>
+                    <p><a href="tel:0963644761">0963644761</a></p>
+                    <p><a href="tel:0963644754">0963644754</a></p>
+                    <p style="font-size: 1rem; color: var(--gray-medium); margin-top: 0.5rem;">Ing. Mónica Constante</p>
+                </div>
+                <div class="contact-detail" style="margin-top: 2rem;">
+                    <h4>Secretaría</h4>
+                    <p><a href="tel:032809181">032-809-181</a></p>
+                    <p style="font-size: 1rem; color: var(--gray-medium); margin-top: 0.5rem;">Lic. Patricia Valladares
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Información General</h3>
+                <div class="contact-detail">
+                    <h4>Teléfonos</h4>
+                    <p><a href="tel:0963644761">096-364-4761</a></p>
+                    <p><a href="tel:032809181">032-809-181</a></p>
+                </div>
+                <div class="contact-detail" style="margin-top: 2rem;">
+                    <h4>Email</h4>
+                    <p><a href="mailto:info@uealberteinstein.edu.ec">info@uealberteinstein.edu.ec</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <h2 class="section-title">Encuéntranos</h2>
+        <div class="location-content">
+            <div class="location-info">
+                <h3>Cotopaxi – Latacunga</h3>
+                <p><strong>Dirección:</strong> Avenida Eloy Alfaro y General Julio Andrade</p>
+                <p><strong>Teléfono:</strong> <a href="tel:0987654321"
+                        style="color: var(--text-black); text-decoration: none;">0987654321</a> – <a
+                        href="tel:0328765432" style="color: var(--text-black); text-decoration: none;">032-876-5432</a>
+                </p>
+                <p style="margin-top: 2rem;">Estamos ubicados en el corazón de Latacunga, fácil acceso en transporte
+                    público y privado. Nuestras instalaciones están diseñadas para brindarte un ambiente educativo
+                    óptimo.</p>
+            </div>
+            <div class="location-map">
+                Mapa de ubicación
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2 class="section-title">Envíanos un mensaje</h2>
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label>Nombre <span class="required">*</span></label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mensaje <span class="required">*</span></label>
+                    <textarea name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Enlaces de interés</h3>
+                <ul class="footer-links">
+                    <li><a href="conocenos.html">Conócenos</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>Teléfono: 096-364-4761<br>Teléfono: 032-809-181</p>
+                <p>Dirección: Avenida Eloy Alfaro & General Julio Andrade</p>
+                <p>Email: info@uealberteinstein.edu.ec</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Unidad Educativa PCEI "Albert Einstein" - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

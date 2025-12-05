@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Educativa - Unidad Educativa PCEI "Albert Einstein"</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Kaushan+Script&family=Lato:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #F9D829;
+            --secondary-red: #EF0F0B;
+            --text-black: #000000;
+            --white: #FFFFFF;
+            --gray-light: #f5f5f5;
+            --gray-medium: #666;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-black);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-yellow);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-black);
+            transition: 0.3s;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s;
+            z-index: 1001;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .close-menu {
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .mobile-links {
+            list-style: none;
+        }
+
+        .mobile-links li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-links a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 70px;
+            height: 40vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 3.5rem;
+        }
+
+        .page-header .highlight {
+            color: var(--primary-yellow);
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 5rem 5%;
+        }
+
+        .program-item {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .program-item:nth-child(even) {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .program-item:nth-child(even) .program-image {
+            order: 2;
+        }
+
+        .program-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .program-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(249, 216, 41, 0.2), rgba(249, 216, 41, 0.05));
+            border-radius: 10px;
+        }
+
+        .program-content {
+            padding: 2rem;
+        }
+
+        .program-content h2 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-black);
+        }
+
+        .program-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-yellow);
+            color: var(--text-black);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #e5c41f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 216, 41, 0.4);
+        }
+
+        /* Technical Programs */
+        .technical-section {
+            padding: 5rem 5%;
+            background: var(--gray-light);
+        }
+
+        .section-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary-yellow);
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .technical-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s;
+            border-top: 4px solid var(--primary-yellow);
+        }
+
+        .technical-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .technical-card h3 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-black);
+        }
+
+        .technical-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-black);
+        }
+
+        .technical-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .technical-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .technical-list li::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--text-black) 0%, #1a1a1a 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content .highlight {
+            color: var(--primary-yellow);
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-black);
+            color: var(--white);
+            padding: 3rem 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .program-item,
+            .program-item:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .program-item:nth-child(even) .program-image {
+                order: 0;
+            }
+
+            .program-image {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">UE <span>Albert Einstein</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="oferta-educativa.html" class="active">Oferta Educativa</a></li>
+                <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">UE <span>Einstein</span></div>
+            <button class="close-menu" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="index.html" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="conocenos.html" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="oferta-educativa.html" onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="aula-virtual.html" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="contacto.html" onclick="toggleMenu()">Contáctanos</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div>
+            <h1>Oferta <span class="highlight">Educativa</span></h1>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <!-- Básica Superior -->
+        <div class="program-item">
+            <div class="program-image"
+                style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800');">
+            </div>
+            <div class="program-content">
+                <h2>Educación General Básica Superior - Intensivo</h2>
+                <p>El servicio educativo de Básica Superior Intensiva está dirigido a jóvenes y adultos de 15 años y más
+                    que no han concluido 8vo, 9no y 10mo de Educación General Básica.</p>
+                <p>Esta oferta de educación extraordinaria para personas en situación de escolaridad inconclusa brinda
+                    la oportunidad de concluir los estudios de educación básica a las personas que por diversas
+                    circunstancias han sido excluidos del sistema educativo y que tienen la oportunidad de concluir los
+                    tres cursos en el tiempo de 11 meses con un mes de propedéutico.</p>
+                <p>La Unidad Educativa PCEI Albert Einstein oferta la educación básica superior intensiva, como una
+                    estrategia de inclusión educativa que restituye los derechos y contribuye a superar la exclusión,
+                    teniendo la continuidad necesaria en los estudios de bachillerato y mejorar su nivel de vida que
+                    permita insertarse al mundo laboral e inclusive continuar sus estudios superiores.</p>
+                <a href="contacto.html" class="btn">Contactar un Representante</a>
+            </div>
+        </div>
+
+        <!-- Bachillerato Ciencias -->
+        <div class="program-item">
+            <div class="program-image"
+                style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800');">
+            </div>
+            <div class="program-content">
+                <h2>Bachillerato General Unificado en Ciencias - Intensivo</h2>
+                <p>Está dirigido a personas de 18 años y más que se encuentran en plena edad productiva y no pueden
+                    insertarse laboralmente por no tener el título de bachiller, esta población puede finalizar su
+                    educación en 18 meses, es decir 5 meses cada año más un mes de propedéutico.</p>
+                <p>Los estudiantes obtendrán a corto plazo el Bachillerato, dándole la oportunidad de mejorar la calidad
+                    de vida y de inserción laboral, así como también continuar sus estudios superiores.</p>
+                <a href="contacto.html" class="btn">Contactar un Representante</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Programs Section -->
+    <section class="technical-section">
+        <h2 class="section-title">Bachillerato Técnico</h2>
+        <p class="section-intro">Está dirigido a personas de 18 años y más que se encuentran en plena edad productiva y
+            no pueden insertarse laboralmente. En la Unidad Educativa PCEI «Albert Einstein» ofrecemos las siguientes
+            ofertas para Figura Profesional:</p>
+
+        <div class="technical-category">
+            <h3 class="category-title">Figura Profesional - Área Técnica de Servicios</h3>
+            <div class="technical-grid">
+                <div class="technical-card">
+                    <h3>FIP: INFORMÁTICA</h3>
+                    <p>Formación profesional en el área de tecnologías de la información y computación.</p>
+                </div>
+                <div class="technical-card">
+                    <h3>FIP: CONTABILIDAD</h3>
+                    <p>Formación profesional en el área contable y financiera para el mundo empresarial.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="technical-category">
+            <h3 class="category-title">Figura Profesional - Área Técnica Industrial</h3>
+            <div class="technical-grid">
+                <div class="technical-card">
+                    <h3>FIP: INDUSTRIA DE LA CONFECCIÓN</h3>
+                    <p>Formación técnica en diseño, patronaje y producción textil.</p>
+                </div>
+                <div class="technical-card">
+                    <h3>FIP: ELECTROMECÁNICA AUTOMOTRIZ</h3>
+                    <p>Formación técnica en mecánica, electrónica y sistemas automotrices.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="contacto.html" class="btn">Contactar un Representante</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Empieza tu camino al <span class="highlight">éxito</span></h2>
+            <p>No dejes pasar más el tiempo para conseguir tus sueños, empieza tu camino AHORA</p>
+            <a href="contacto.html" class="btn">Contáctate con un Representante</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Enlaces de interés</h3>
+                <ul class="footer-links">
+                    <li><a href="conocenos.html">Conócenos</a></li>
+                    <li><a href="oferta-educativa.html">Oferta Educativa</a></li>
+                    <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>Teléfono: 096-364-4761<br>Teléfono: 032-809-181</p>
+                <p>Dirección: Avenida Eloy Alfaro & General Julio Andrade</p>
+                <p>Email: info@uealberteinstein.edu.ec</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Unidad Educativa PCEI "Albert Einstein" - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

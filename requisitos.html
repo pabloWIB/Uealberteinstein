@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisitos para Ingreso - Unidad Educativa PCEI Albert Einstein</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #F9D829;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+            --border: #ddd;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('assets/estudiante-bandera-ecuador-izada-pcei.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 4% 6rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 6rem 4%;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .main-content {
+            background: var(--white);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--light-gray);
+        }
+
+        .logo-container img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .intro-message {
+            background: var(--yellow);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-left: 6px solid var(--dark);
+        }
+
+        .intro-message p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .requirements-section {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-top: 6px solid var(--yellow);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--yellow);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+        }
+
+        .requirements-list li:hover {
+            transform: translateX(10px);
+            border-left-width: 8px;
+        }
+
+        .requirement-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--dark);
+            flex-shrink: 0;
+        }
+
+        .requirement-text {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .sidebar {
+            background: var(--light-gray);
+        }
+
+        .sidebar-section {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--yellow);
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--yellow);
+        }
+
+        .sidebar-list a i {
+            font-size: 0.9rem;
+        }
+
+        .no-content {
+            color: var(--gray);
+            font-style: italic;
+            padding: 1rem 0;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .cta-section {
+            background: var(--dark);
+            padding: 3rem;
+            text-align: center;
+            color: var(--white);
+            margin-top: 3rem;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--yellow);
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-yellow {
+            background: var(--yellow);
+            color: var(--dark);
+        }
+
+        .btn-yellow:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .requirements-list li {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-badge">Proceso de Admisión</div>
+        <h1>Requisitos para Ingreso</h1>
+        <p>Toda la información que necesitas para iniciar tu proceso de matriculación</p>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="logo-container">
+                        <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-img-grande.png"
+                            alt="Logo UE Albert Einstein">
+                    </div>
+
+                    <div class="intro-message">
+                        <p>
+                            <strong>Estimado/a aspirante,</strong> los requisitos para ingreso son los que se detallan a
+                            continuación,
+                            favor acercarse a las oficinas de la Unidad Educativa o enviar un correo electrónico
+                            solicitando más información.
+                        </p>
+                    </div>
+
+                    <div class="requirements-section">
+                        <h2 class="section-title">Documentación Necesaria</h2>
+                        <ul class="requirements-list">
+                            <li>
+                                <div class="requirement-icon">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <span class="requirement-text">Copia de la Cédula de Identidad</span>
+                            </li>
+                            <li>
+                                <div class="requirement-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <span class="requirement-text">Partida de nacimiento (original)</span>
+                            </li>
+                            <li>
+                                <div class="requirement-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <span class="requirement-text">Certificado de haber terminado la primaria</span>
+                            </li>
+                            <li>
+                                <div class="requirement-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <span class="requirement-text">Pases de año originales</span>
+                            </li>
+                            <li>
+                                <div class="requirement-icon">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <span class="requirement-text">4 Fotografías tamaño carnet a colores</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-section">
+                        <h3 class="cta-title">¿Listo para Inscribirte?</h3>
+                        <p class="cta-text">Contáctanos para iniciar tu proceso de admisión</p>
+                        <div class="cta-buttons">
+                            <a href="contacto.html" class="btn btn-yellow">
+                                <i class="fas fa-envelope"></i> Enviar Correo
+                            </a>
+                            <a href="tel:+593963644761" class="btn btn-outline">
+                                <i class="fas fa-phone-alt"></i> 096-364-4761
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Buscar</h3>
+                        <form>
+                            <input type="search" placeholder="Buscar..."
+                                style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); font-family: 'Inter', sans-serif; font-size: 0.95rem;">
+                        </form>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Publicaciones Recientes</h3>
+                        <ul class="sidebar-list">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-chevron-right"></i>
+                                    Requisitos para ingreso 2021 – 2022
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Comentarios Recientes</h3>
+                        <p class="no-content">No hay comentarios que mostrar.</p>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Categorías</h3>
+                        <ul class="sidebar-list">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-folder"></i>
+                                    Boletines informativos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

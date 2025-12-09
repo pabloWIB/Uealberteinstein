@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #f9d829;
+  --dark: #1a1a1a;
+  --gray: #666;
+  --light-gray: #f5f5f5;
+  --white: #fff;
+  --border: #ddd;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../personal-docente-administrativo-teatro-evento.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 4% 8rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--dark);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.programs {
+  padding: 8rem 4%;
+  background: var(--white);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.program-section {
+  margin-bottom: 8rem;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.program-grid.reverse {
+  direction: rtl;
+}
+
+.program-grid.reverse > * {
+  direction: ltr;
+}
+
+.program-content {
+  max-width: 600px;
+}
+
+.program-badge {
+  display: inline-block;
+  background: var(--yellow);
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.program-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.program-duration {
+  background: var(--dark);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.program-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.program-features {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-left: 6px solid var(--yellow);
+  margin: 2rem 0;
+}
+
+.program-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.program-features li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.program-features li:before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--yellow);
+  font-size: 1.1rem;
+}
+
+.program-button {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: var(--yellow);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.program-button:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.program-image {
+  height: 550px;
+  position: relative;
+}
+
+.program-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.program-image.left {
+  border-left: 8px solid var(--yellow);
+}
+
+.program-image.right {
+  border-right: 8px solid var(--yellow);
+}
+
+.technical-programs {
+  padding: 8rem 4%;
+  background: var(--yellow);
+}
+
+.technical-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-areas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.tech-area {
+  background: var(--white);
+  padding: 3rem;
+}
+
+.tech-area-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 4px solid var(--dark);
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tech-list li {
+  padding: 1rem 0;
+  padding-left: 2.5rem;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.tech-list li:before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f19d";
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+  color: var(--yellow);
+}
+
+.tech-list li:last-child {
+  border-bottom: none;
+}
+
+.stats-banner {
+  padding: 6rem 4%;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.cta-section {
+  padding: 8rem 4%;
+  background: var(--light-gray);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.cta-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--gray);
+  margin-bottom: 3rem;
+}
+
+.cta-highlight {
+  background: var(--yellow);
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cta-highlight p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1.3rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.btn-yellow:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .program-grid.reverse {
+    direction: ltr;
+  }
+
+  .tech-areas {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .program-title,
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

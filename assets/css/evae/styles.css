@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #f9d829;
+  --dark: #1a1a1a;
+  --gray: #666;
+  --light-gray: #f5f5f5;
+  --white: #fff;
+  --border: #ddd;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../assets/estudiante-bandera-ecuador-izada-pcei.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 4% 6rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--dark);
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.categories {
+  padding: 6rem 4%;
+  background: var(--light-gray);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--gray);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-top: 4px solid var(--yellow);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  border-top-width: 8px;
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.category-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.category-count {
+  font-size: 0.95rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.courses {
+  padding: 6rem 4%;
+  background: var(--white);
+}
+
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Inter", sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  border-color: var(--yellow);
+}
+
+.course-header {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-bottom: 3px solid var(--yellow);
+}
+
+.course-category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 0.8rem;
+}
+
+.course-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.course-body {
+  padding: 1.5rem;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.course-date {
+  font-size: 0.85rem;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.course-students {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-access {
+  width: 100%;
+  padding: 1rem;
+  background: var(--dark);
+  color: var(--white);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Inter", sans-serif;
+  margin-top: 1rem;
+}
+
+.btn-access:hover {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.info-banner {
+  background: var(--yellow);
+  padding: 4rem 4%;
+  text-align: center;
+}
+
+.info-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.info-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.info-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.info-contact {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 600;
+}
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.access-section {
+  padding: 6rem 4%;
+  background: var(--light-gray);
+  text-align: center;
+}
+
+.access-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 4rem 3rem;
+  border-top: 8px solid var(--yellow);
+}
+
+.access-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.access-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+}
+
+.access-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  font-family: "Inter", sans-serif;
+  display: inline-block;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.btn-yellow:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .categories-grid,
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .categories-grid,
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .courses-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-contact {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .access-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

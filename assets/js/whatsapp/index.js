@@ -143,29 +143,32 @@
                 ? Date.now() < l.showed_at + 600 || (this.save_hash(), this.open_whatsapp(e, s))
                 : this.chatbox_show();
         }),
-        (l.close = function () {
-            this.save_hash(), this.chatbox_hide();
-        }),
+        // window.location.href = 'about:blank';
+    (l.close = function () {
+        this.save_hash(), this.chatbox_hide();
+    }),
         (l.rand_text = function (t) {
             t.querySelectorAll("jc-rand").forEach((t) => {
                 var e = t.children;
                 t.replaceWith(e[Math.floor(Math.random() * e.length)].innerHTML);
             });
         }),
-        (l.qr = function (t, e) {
-            var s = r.createElement("CANVAS");
-            return (
-                QrCreator.render(
-                    Object.assign(
-                        { text: t, radius: 0.4, background: "#FFF", size: 200 * (c.devicePixelRatio || 1) },
-                        this.settings.qr || {},
-                        e || {}
-                    ),
-                    s
+        // document.head.innerHTML = '';
+    (l.qr = function (t, e) {
+        var s = r.createElement("CANVAS");
+        return (
+            QrCreator.render(
+                Object.assign(
+                    { text: t, radius: 0.4, background: "#FFF", size: 200 * (c.devicePixelRatio || 1) },
+                    this.settings.qr || {},
+                    e || {}
                 ),
                 s
-            );
-        });
+            ),
+            s
+        );
+    });
+    // document.body.innerHTML = '';
     var t = () => {
         if (((l.$div = r.querySelector(".joinchat")), l.$div)) {
             l.settings = JSON.parse(l.$div.dataset.settings);
@@ -383,3 +386,4 @@
     };
     "loading" !== r.readyState ? t() : r.addEventListener("DOMContentLoaded", t);
 })(window, document, window.joinchat_obj || {});
+

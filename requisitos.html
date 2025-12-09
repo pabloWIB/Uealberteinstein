@@ -9,328 +9,35 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --yellow: #F9D829;
-            --dark: #1a1a1a;
-            --gray: #666;
-            --light-gray: #f5f5f5;
-            --white: #fff;
-            --border: #ddd;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            background: var(--white);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('assets/estudiante-bandera-ecuador-izada-pcei.webp');
-            background-size: cover;
-            background-position: center;
-            padding: 8rem 4% 6rem;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--yellow);
-            color: var(--dark);
-            padding: 0.4rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            padding: 6rem 4%;
-            background: var(--white);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
-        }
-
-        .main-content {
-            background: var(--white);
-        }
-
-        .logo-container {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: var(--light-gray);
-        }
-
-        .logo-container img {
-            max-width: 300px;
-            height: auto;
-        }
-
-        .intro-message {
-            background: var(--yellow);
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            border-left: 6px solid var(--dark);
-        }
-
-        .intro-message p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            font-weight: 500;
-        }
-
-        .requirements-section {
-            background: var(--light-gray);
-            padding: 3rem;
-            border-top: 6px solid var(--yellow);
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--dark);
-        }
-
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .requirements-list li {
-            background: var(--white);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--yellow);
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s;
-        }
-
-        .requirements-list li:hover {
-            transform: translateX(10px);
-            border-left-width: 8px;
-        }
-
-        .requirement-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--yellow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--dark);
-            flex-shrink: 0;
-        }
-
-        .requirement-text {
-            flex: 1;
-            font-weight: 500;
-        }
-
-        .sidebar {
-            background: var(--light-gray);
-        }
-
-        .sidebar-section {
-            background: var(--white);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-top: 4px solid var(--yellow);
-        }
-
-        .sidebar-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .sidebar-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .sidebar-list li:last-child {
-            border-bottom: none;
-        }
-
-        .sidebar-list a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .sidebar-list a:hover {
-            color: var(--yellow);
-        }
-
-        .sidebar-list a i {
-            font-size: 0.9rem;
-        }
-
-        .no-content {
-            color: var(--gray);
-            font-style: italic;
-            padding: 1rem 0;
-        }
-
-        .category-badge {
-            display: inline-block;
-            background: var(--yellow);
-            color: var(--dark);
-            padding: 0.3rem 0.8rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        .cta-section {
-            background: var(--dark);
-            padding: 3rem;
-            text-align: center;
-            color: var(--white);
-            margin-top: 3rem;
-        }
-
-        .cta-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--yellow);
-        }
-
-        .cta-text {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn-yellow {
-            background: var(--yellow);
-            color: var(--dark);
-        }
-
-        .btn-yellow:hover {
-            background: var(--white);
-            color: var(--dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--dark);
-        }
-
-        @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .requirements-list li {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/requisitos/styles.css">
+    <link rel="stylesheet" href="assets/css/global/styles.css">
+    <link rel="stylesheet" href="assets/css/whatsapp/styles.css">
 </head>
 
 <body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png"
+                    alt="UE Einstein">
+                <span class="logo-text">Albert Einstein</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-active">Inicio</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="bachillerato-acelerado.html">Oferta Educativa</a></li>
+                <li><a href="aula-virtual.html">Aula Virtual</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
     <section class="hero">
         <div class="hero-badge">Proceso de Admisión</div>
         <h1>Requisitos para Ingreso</h1>
@@ -446,6 +153,40 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">Albert Einstein</div>
+                <p class="footer-text">
+                    Formando líderes del futuro con educación de calidad, valores sólidos
+                    y compromiso con la excelencia.
+                </p>
+            </div>
+            <div>
+                <div class="footer-title">Enlaces</div>
+                <ul class="footer-links">
+                    <li><a href="#conocenos">Conócenos</a></li>
+                    <li><a href="#oferta">Oferta Educativa</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Contacto</div>
+                <ul class="footer-links">
+                    <li>096-364-4761</li>
+                    <li>032-809-181</li>
+                    <li>info@uealberteinstein.edu.ec</li>
+                </ul>
+            </div>
+            <div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/whatsapp/index.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

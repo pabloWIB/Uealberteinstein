@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Virtual - Unidad Educativa PCEI Albert Einstein</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #F9D829;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+            --border: #ddd;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('assets/graduacion-estudiantes-manos-levantadas-celebracion.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 10rem 4% 8rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--yellow);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .innovation {
+            padding: 8rem 4%;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--yellow);
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--yellow);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-left: 6px solid var(--dark);
+        }
+
+        .highlight-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .innovation-image {
+            height: 550px;
+            border-right: 8px solid var(--yellow);
+        }
+
+        .innovation-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .features {
+            padding: 8rem 4%;
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-top: 6px solid var(--yellow);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .platform {
+            padding: 8rem 4%;
+            background: var(--yellow);
+        }
+
+        .platform-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .platform-content {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .platform-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .platform-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .platform-feature {
+            background: var(--white);
+            padding: 2.5rem;
+            text-align: left;
+        }
+
+        .platform-feature h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .platform-feature p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .tools {
+            padding: 8rem 4%;
+            background: var(--white);
+        }
+
+        .tools-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tools-intro {
+            margin-bottom: 3rem;
+        }
+
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .tool-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--light-gray);
+            border-left: 4px solid var(--yellow);
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            color: var(--dark);
+        }
+
+        .tool-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-content p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .benefits {
+            padding: 8rem 4%;
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .benefits-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--yellow);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+
+        .benefit-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--yellow);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .cta {
+            padding: 6rem 4%;
+            background: var(--light-gray);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-yellow {
+            background: var(--yellow);
+            color: var(--dark);
+        }
+
+        .btn-yellow:hover {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .btn-dark {
+            background: var(--dark);
+            color: var(--white);
+            border: 2px solid var(--dark);
+        }
+
+        .btn-dark:hover {
+            background: transparent;
+            color: var(--dark);
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .innovation-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .features-grid,
+            .platform-features,
+            .tools-list {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #F9D829;
+            --dark: #1a1a1a;
+            --gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+            --border: #ddd;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--yellow);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 5rem 4% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 350px;
+        }
+
+        .footer-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--white);
+            z-index: 1001;
+            padding: 2rem;
+            transition: right 0.3s;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--yellow);
+        }
+
+        .close-btn {
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-links {
+            list-style: none;
+        }
+
+        .mobile-links li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png"
+                    alt="UE Einstein">
+                <span class="logo-text">Albert Einstein</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="conocenos.html" class="nav-active">Conócenos</a></li>
+                <li><a href="oferta.html">Oferta Educativa</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Soy Estudiante</div>
+        <h1>Aula Virtual</h1>
+        <p>
+            Accede a tu plataforma educativa desde cualquier lugar, en cualquier momento.
+            Aprende a tu ritmo con herramientas innovadoras y contenido interactivo.
+        </p>
+        <a href="#" class="hero-button">Acceder al Aula Virtual</a>
+    </section>
+
+    <section class="innovation">
+        <div class="container">
+            <div class="innovation-grid">
+                <div>
+                    <div class="section-badge">Educación Digital</div>
+                    <h2 class="section-title">Innovación en Educación</h2>
+                    <p class="section-text">
+                        Los estudiantes podrán acceder a las tutorías virtuales ya sean en el modo sincrónico
+                        o asincrónico por lo menos de 12 horas semanales en el caso de la Modalidad Semipresencial.
+                    </p>
+                    <p class="section-text">
+                        En el caso de la Modalidad A Distancia-Virtual tendrán disponible asincrónicamente la
+                        Plataforma Virtual las 24 horas del día, los mismos que encontrarán materiales de estudio
+                        muy didácticos.
+                    </p>
+                    <div class="highlight-box">
+                        <p class="highlight-text">
+                            Los estudiantes y Docentes accederán al Aula Virtual mediante un nombre de usuario y
+                            clave previamente entregada. Podrán contactarse con sus docentes-tutores mediante
+                            Foro, Chat o cualquier elemento propuesto.
+                        </p>
+                    </div>
+                </div>
+                <div class="innovation-image">
+                    <img src="assets/graduada-profesora-celebracion-bachillerato.webp" alt="Estudiantes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Qué Encontrarás en el Aula Virtual?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                    <h3 class="feature-title">Contenidos Interactivos</h3>
+                    <p class="feature-text">
+                        Materiales académicos dinámicos creados con herramientas especiales que permiten un
+                        aprendizaje agradable y efectivo.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 class="feature-title">Tutorías en Línea</h3>
+                    <p class="feature-text">
+                        Acceso directo a tus docentes en tiempo real para resolver dudas y recibir
+                        acompañamiento personalizado.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3 class="feature-title">Juegos Didácticos</h3>
+                    <p class="feature-text">
+                        Aprende de forma divertida con actividades interactivas, animaciones y recursos
+                        multimedia educativos.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3 class="feature-title">Biblioteca Digital</h3>
+                    <p class="feature-text">
+                        Acceso a una amplia colección de e-books y recursos digitales disponibles
+                        las 24 horas del día.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-edit"></i></div>
+                    <h3 class="feature-title">Autoevaluaciones</h3>
+                    <p class="feature-text">
+                        Mide tu progreso con evaluaciones automáticas y recibe retroalimentación
+                        inmediata sobre tu desempeño.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="feature-title">Seguimiento Académico</h3>
+                    <p class="feature-text">
+                        Monitorea tu avance, calificaciones y actividades pendientes en tiempo real
+                        desde tu panel personal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="platform">
+        <div class="platform-container">
+            <div class="platform-content">
+                <h2 class="platform-title">El Aula Virtual en la UE PCEI Albert Einstein</h2>
+                <p class="platform-text">
+                    El aula virtual es el entorno o plataforma de aprendizaje, donde el estudiante accede para
+                    realizar los cursos en los cuales está matriculado. Nuestra aula virtual está implementada
+                    en <strong>Moodle</strong>, un sistema de gestión de cursos de libre distribución que ayuda a los
+                    educadores a crear comunidades de aprendizaje en línea para nuestros estudiantes.
+                </p>
+                <p class="platform-text">
+                    El Aula Virtual es un sitio de encuentro en la web, al cual se accede por medio de una
+                    conexión internet, construida en una plataforma tecnológica que está concebida para
+                    desarrollar procesos de formación virtual, también llamados procesos de formación e-learning.
+                </p>
+            </div>
+            <div class="platform-features">
+                <div class="platform-feature">
+                    <h3>Acceso 24/7</h3>
+                    <p>
+                        Disponibilidad total para que puedas estudiar en el horario que mejor se adapte
+                        a tus necesidades y responsabilidades.
+                    </p>
+                </div>
+                <div class="platform-feature">
+                    <h3>Contenido Multimedia</h3>
+                    <p>
+                        Videos, animaciones, presentaciones interactivas y recursos visuales que facilitan
+                        la comprensión de los temas.
+                    </p>
+                </div>
+                <div class="platform-feature">
+                    <h3>Comunicación Directa</h3>
+                    <p>
+                        Conecta con tus compañeros y docentes a través de foros, chats y mensajería interna
+                        de la plataforma.
+                    </p>
+                </div>
+                <div class="platform-feature">
+                    <h3>Seguimiento Personalizado</h3>
+                    <p>
+                        Los docentes pueden hacer seguimiento detallado de tu progreso y brindarte
+                        orientación específica según tus necesidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools">
+        <div class="tools-container">
+            <div class="section-header">
+                <h2 class="section-title">Herramientas Disponibles</h2>
+                <p class="section-text">
+                    El aula virtual ofrece herramientas didácticas conocidas como Web 2.0 que están
+                    orientadas a una aplicación más práctica y formativa.
+                </p>
+            </div>
+            <div class="tools-list">
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-comments"></i></div>
+                    <div class="tool-content">
+                        <h4>Foros de Discusión</h4>
+                        <p>
+                            Participa en debates académicos, comparte ideas y aprende de las experiencias
+                            de tus compañeros.
+                        </p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="tool-content">
+                        <h4>Wikis Colaborativas</h4>
+                        <p>
+                            Construye conocimiento en equipo creando y editando documentos compartidos
+                            con tus compañeros.
+                        </p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-blog"></i></div>
+                    <div class="tool-content">
+                        <h4>Blogs Educativos</h4>
+                        <p>
+                            Documenta tu proceso de aprendizaje y comparte reflexiones sobre los temas
+                            que estás estudiando.
+                        </p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-comment-dots"></i></div>
+                    <div class="tool-content">
+                        <h4>Chat en Tiempo Real</h4>
+                        <p>
+                            Comunícate instantáneamente con docentes y compañeros para resolver dudas
+                            de forma rápida.
+                        </p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="tool-content">
+                        <h4>Gestión de Tareas</h4>
+                        <p>
+                            Entrega trabajos, recibe calificaciones y mantén organizadas todas tus
+                            actividades académicas.
+                        </p>
+                    </div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon"><i class="fas fa-poll"></i></div>
+                    <div class="tool-content">
+                        <h4>Encuestas y Evaluaciones</h4>
+                        <p>
+                            Participa en evaluaciones formativas y ayuda a mejorar la calidad de los
+                            cursos con tu feedback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefits-container">
+            <div class="benefits-header">
+                <h2>Más Allá del Servicio Educativo</h2>
+                <p style="font-size: 1.15rem; opacity: 0.9;">
+                    El programa pretende que los estudiantes de la Unidad Educativa PCEI "Albert Einstein"
+                    incorporen las ventajas del uso de internet y la Web a su trabajo diario.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">01</div>
+                    <p class="benefit-text">
+                        Nuevas formas de aprender y estudiar adaptadas a la era digital
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">02</div>
+                    <p class="benefit-text">
+                        Desarrolla habilidades de investigación en entornos virtuales
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">03</div>
+                    <p class="benefit-text">
+                        Crea y aplica conocimientos de manera innovadora
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">Albert Einstein</div>
+                <p class="footer-text">
+                    Formando líderes del futuro con educación de calidad, valores sólidos
+                    y compromiso con la excelencia.
+                </p>
+            </div>
+            <div>
+                <div class="footer-title">Enlaces</div>
+                <ul class="footer-links">
+                    <li><a href="#conocenos">Conócenos</a></li>
+                    <li><a href="#oferta">Oferta Educativa</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Contacto</div>
+                <ul class="footer-links">
+                    <li>096-364-4761</li>
+                    <li>032-809-181</li>
+                    <li>info@uealberteinstein.edu.ec</li>
+                </ul>
+            </div>
+            <div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const menu = document.getElementById('mobileMenu');
+                    menu.classList.remove('active');
+
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2 class="cta-title">¿Listo para Comenzar?</h2>
+            <p class="cta-text">
+                Accede ahora a tu aula virtual y descubre todas las herramientas que tenemos
+                preparadas para tu éxito académico.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-yellow">Acceder al Aula Virtual</a>
+                <a href="contacto.html" class="btn btn-dark">¿Necesitas Ayuda?</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

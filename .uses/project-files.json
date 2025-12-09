@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "totalImages": 21,
+    "totalHTML": 12,
+    "totalCSS": 2,
+    "totalJavaScript": 4,
+    "scannedAt": "2025-12-09T19:07:09.365Z",
+    "projectDirectory": "C:\\Users\\pablo\\Desktop\\WEBS\\Uealberteinstein"
+  },
+  "files": {
+    "images": [
+      {
+        "path": "assets/directivo-charla-izada-bandera-colegio.webp"
+      },
+      {
+        "path": "assets/directivo-rectora-discurso-graduacion-teatro.webp"
+      },
+      {
+        "path": "assets/directivos-entregan-titulo-bachiller-pcei.webp"
+      },
+      {
+        "path": "assets/directivos-izada-bandera-patio-principal.webp"
+      },
+      {
+        "path": "assets/docentes-ue-albert-einstein-valores.webp"
+      },
+      {
+        "path": "assets/estudiante-bandera-ecuador-izada-pcei.webp"
+      },
+      {
+        "path": "assets/evento-graduacion-teatro-bachilleres.webp"
+      },
+      {
+        "path": "assets/fachada-institucion-pcei-noche-iluminada.webp"
+      },
+      {
+        "path": "assets/graduacion-estudiantes-manos-levantadas-celebracion.webp"
+      },
+      {
+        "path": "assets/graduada-profesora-celebracion-bachillerato.webp"
+      },
+      {
+        "path": "assets/graduada-recibe-medalla-reconocimiento.webp"
+      },
+      {
+        "path": "assets/graduados-mano-pecho-juramento-bachilleres.webp"
+      },
+      {
+        "path": "assets/izada-bandera-pcei-albert-einstein.webp"
+      },
+      {
+        "path": "assets/joven-hombre-estudiante-bandera-actos-civicos.webp"
+      },
+      {
+        "path": "assets/logo-ue-albert-einstein-latacunga.webp"
+      },
+      {
+        "path": "assets/oferta-50-descuento-bachillerato-a-distancia.webp"
+      },
+      {
+        "path": "assets/oferta-educativa-100-por-ciento-online-distancia.webp"
+      },
+      {
+        "path": "assets/personal-docente-administrativo-teatro-evento.webp"
+      },
+      {
+        "path": "assets/personal-docente-patio-izada-bandera-ueae.webp"
+      },
+      {
+        "path": "assets/plan-oferta-educativa-pcei-bachillerato-acelerado.webp"
+      },
+      {
+        "path": "assets/profesora-entrega-reconocimiento-academico.webp"
+      }
+    ],
+    "html": [
+      {
+        "path": "404.html"
+      },
+      {
+        "path": "aula-virtual.html"
+      },
+      {
+        "path": "bachillerato-acelerado.html"
+      },
+      {
+        "path": "boletines.html"
+      },
+      {
+        "path": "conocenos.html"
+      },
+      {
+        "path": "contacto.html"
+      },
+      {
+        "path": "cookies.html"
+      },
+      {
+        "path": "evae.html"
+      },
+      {
+        "path": "index.html"
+      },
+      {
+        "path": "politica-de-privavidad.html"
+      },
+      {
+        "path": "requisitos.html"
+      },
+      {
+        "path": "terminos-y-condiciones.html"
+      }
+    ],
+    "css": [
+      {
+        "path": "assets/css/stles.css"
+      },
+      {
+        "path": "assets/css/whatsapp/styles.css"
+      }
+    ],
+    "javascript": [
+      {
+        "path": "assets/js/index.js"
+      },
+      {
+        "path": "assets/js/script.js"
+      },
+      {
+        "path": "assets/js/whatsapp/index.js"
+      },
+      {
+        "path": "extract-images.js"
+      }
+    ],
+    "other": []
+  }
+}

@@ -137,10 +137,6 @@ footer {
   transition: color 0.3s;
 }
 
-.footer-links a:hover {
-  color: var(--yellow);
-}
-
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;

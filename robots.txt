@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /legales/
+Disallow: /404.html
+
+Allow: /assets/
+
+
+Sitemap: https://uealberteinstein.edu.ec/sitemap.xml

@@ -536,7 +536,8 @@ footer {
 }
 
 .footer-links a:hover {
-  color: var(--yellow);
+  text-decoration: 1px solid underline;
+  text-underline-offset: 5px;
 }
 
 .footer-bottom {

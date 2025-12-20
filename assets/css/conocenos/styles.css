@@ -297,6 +297,9 @@ body {
 }
 
 .team-member {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.25rem;
   text-align: center;
   padding: 1.5rem;
   border: 1px solid var(--border);
@@ -312,6 +315,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 0 auto 1rem;
+  margin-top: 1.5rem;
   border-radius: 50%;
   background: var(--light-gray);
   display: flex;
@@ -319,6 +323,10 @@ body {
   justify-content: center;
   font-size: 2.5rem;
   color: var(--gray);
+}
+
+.team-member-image img{
+  border-radius: 2px;
 }
 
 .team-member-name {

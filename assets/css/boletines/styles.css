@@ -147,9 +147,8 @@ body {
 }
 
 .content-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 5rem;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .main-content {
@@ -159,15 +158,12 @@ body {
 .logo-container {
   text-align: center;
   margin-bottom: 4rem;
-  padding: 3rem;
-  background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-  border-radius: 10px;
 }
 
 .logo-container img {
-  max-width: 350px;
-  height: auto;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  width: 100%;
+  max-width: 150px;
+  height: 100%;
 }
 
 .intro-message {
@@ -248,92 +244,6 @@ body {
   font-weight: 600;
 }
 
-.sidebar {
-  background: transparent;
-}
-
-.sidebar-section {
-  background: var(--white);
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  border-top: 6px solid var(--yellow);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.sidebar-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-.sidebar-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid var(--yellow);
-  color: var(--dark);
-}
-
-.search-input {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid var(--border);
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: var(--yellow);
-  box-shadow: 0 0 0 3px rgba(249, 216, 41, 0.1);
-}
-
-.sidebar-list {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar-list li {
-  padding: 1.2rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.sidebar-list li:last-child {
-  border-bottom: none;
-}
-
-.sidebar-list a {
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  transition: all 0.3s ease;
-}
-
-.sidebar-list a:hover {
-  color: var(--yellow);
-  padding-left: 10px;
-}
-
-.sidebar-list a i {
-  font-size: 0.9rem;
-  transition: transform 0.3s ease;
-}
-
-.sidebar-list a:hover i {
-  transform: translateX(5px);
-}
-
-.no-content {
-  color: var(--gray);
-  font-style: italic;
-  padding: 1rem 0;
-}
-
 .cta-section {
   background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
   padding: 4rem;
@@ -386,13 +296,6 @@ body {
   background: var(--white);
   color: var(--dark);
   transform: translateY(-3px);
-}
-
-@media (max-width: 1200px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
 }
 
 @media (max-width: 768px) {

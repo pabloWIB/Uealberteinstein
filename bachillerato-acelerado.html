@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferta Educativa - Unidad Educativa PCEI Albert Einstein</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -18,19 +25,13 @@
     <meta property="og:title" content="Bachillerato Acelerado en 18 Meses | PCEI Albert Einstein">
     <meta property="og:description"
         content="Obtén tu título de bachiller en solo 18 meses. Para adultos desde 18 años. Modalidad semipresencial y a distancia.">
-    <meta property="og:image"
-        content="https://uealberteinstein.edu.ec/assets/graduados-mano-pecho-juramento-bachilleres.webp">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bachillerato Acelerado en 18 Meses | PCEI Albert Einstein">
     <meta name="twitter:description"
         content="Obtén tu título de bachiller en solo 18 meses. Para adultos desde 18 años. Modalidad semipresencial y a distancia.">
-    <meta name="twitter:image"
-        content="https://uealberteinstein.edu.ec/assets/graduados-mano-pecho-juramento-bachilleres.webp">
 
     <link rel="canonical" href="https://uealberteinstein.edu.ec/bachillerato-acelerado">
-    <link rel="icon" type="image/png"
-        href="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/bachillerato/styles.css">
     <link rel="stylesheet" href="assets/css/global/styles.css">
@@ -41,8 +42,8 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png"
-                    alt="UE Einstein">
+                <img src="assets/logo-ue-albert-einstein-latacunga.webp" alt="Logo UE Albert Einstein PCEI Latacunga"
+                    title="Unidad Educativa PCEI Albert Einstein" width="50" height="50" loading="eager">
                 <span class="logo-text">Albert Einstein</span>
             </a>
             <ul class="nav-menu">
@@ -59,6 +60,20 @@
             </div>
         </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="logo-text">Albert Einstein</span>
+            <button class="close-btn" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="/" class="nav-active" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="/conocenos" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="/bachillerato-acelerado" onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="/aula-virtual" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="/contacto" onclick="toggleMenu()">Contacto</a></li>
+        </ul>
+    </div>
 
     <section class="hero">
         <div class="hero-badge">Nuestros Programas</div>
@@ -101,7 +116,8 @@
                         <a href="tel:0987421745" class="program-button">Contactar un Representante</a>
                     </div>
                     <div class="program-image left">
-                        <img src="assets/graduada-recibe-medalla-reconocimiento.webp" alt="Estudiante EGB">
+                        <img src="assets/graduada-recibe-medalla-reconocimiento.webp" alt="Estudiante EGB"
+                            title="Graduada recibe medalla de reconocimiento">
                     </div>
                 </div>
             </div>
@@ -109,7 +125,8 @@
             <div class="program-section">
                 <div class="program-grid reverse">
                     <div class="program-image right">
-                        <img src="assets/directivos-entregan-titulo-bachiller-pcei.webp" alt="Bachillerato">
+                        <img src="assets/directivos-entregan-titulo-bachiller-pcei.webp" alt="Bachillerato"
+                            title="Directivos entregan título de bachiller">
                     </div>
                     <div class="program-content">
                         <div class="program-badge">Bachillerato General Unificado</div>
@@ -261,8 +278,9 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-letras-UE-PCEI.png"
-                    alt="Logo Albert Einstein" class="footer-logo-img">
+                <img src="assets/logo.png" alt="Logo Unidad Educativa PCEI Albert Einstein Latacunga"
+                    title="PCEI Albert Einstein - Educación de Calidad" class="footer-logo-img" width="200" height="80"
+                    loading="lazy">
                 <p class="footer-description">
                     Unidad Educativa PCEI<br>
                     <span class="logo-script">Albert Einstein</span>
@@ -303,7 +321,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="year"></span>  Unidad Educativa PCEI "Albert Einstein"
+            <p>&copy; <span id="year"></span> Unidad Educativa PCEI "Albert Einstein"
             </p>
         </div>
     </footer>

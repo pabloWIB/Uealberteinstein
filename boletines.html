@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requisitos para Ingreso - PCEI Albert Einstein</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -18,19 +25,13 @@
     <meta property="og:title" content="Boletines Informativos | PCEI Albert Einstein Latacunga">
     <meta property="og:description"
         content="Consulta nuestros boletines informativos. Mantente al día con eventos, actividades y novedades de nuestra institución.">
-    <meta property="og:image"
-        content="https://uealberteinstein.edu.ec/assets/directivo-charla-izada-bandera-colegio.webp">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Boletines Informativos | PCEI Albert Einstein Latacunga">
     <meta name="twitter:description"
         content="Consulta nuestros boletines informativos. Mantente al día con eventos, actividades y novedades de nuestra institución.">
-    <meta name="twitter:image"
-        content="https://uealberteinstein.edu.ec/assets/directivo-charla-izada-bandera-colegio.webp">
 
     <link rel="canonical" href="https://uealberteinstein.edu.ec/boletines">
-    <link rel="icon" type="image/png"
-        href="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/boletines/styles.css">
     <link rel="stylesheet" href="assets/css/global/styles.css">
@@ -41,8 +42,8 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png"
-                    alt="UE Einstein">
+                <img src="assets/logo-ue-albert-einstein-latacunga.webp" alt="Logo UE Albert Einstein PCEI Latacunga"
+                    title="Unidad Educativa PCEI Albert Einstein" width="50" height="50" loading="eager">
                 <span class="logo-text">Albert Einstein</span>
             </a>
             <ul class="nav-menu">
@@ -59,6 +60,20 @@
             </div>
         </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="logo-text">Albert Einstein</span>
+            <button class="close-btn" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="/" class="nav-active" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="/conocenos" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="/bachillerato-acelerado" onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="/aula-virtual" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="/contacto" onclick="toggleMenu()">Contacto</a></li>
+        </ul>
+    </div>
 
     <section class="hero">
         <div class="hero-content">
@@ -82,8 +97,9 @@
             <div class="content-grid">
                 <div class="main-content">
                     <div class="logo-container">
-                        <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-img-grande.png"
-                            alt="Logo UE Albert Einstein">
+                        <img src="assets/logo.png" alt="Logo Unidad Educativa PCEI Albert Einstein Latacunga"
+                            title="PCEI Albert Einstein - Educación de Calidad" width="300" height="300"
+                            loading="eager">
                     </div>
 
                     <div class="intro-message">
@@ -143,44 +159,6 @@
                         </div>
                     </div>
                 </div>
-
-                <aside class="sidebar">
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-search"></i> Buscar</h3>
-                        <form>
-                            <input type="search" class="search-input" placeholder="Buscar información...">
-                        </form>
-                    </div>
-
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-newspaper"></i> Publicaciones Recientes</h3>
-                        <ul class="sidebar-list">
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-chevron-right"></i>
-                                    Requisitos para ingreso 2021 – 2022
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-comments"></i> Comentarios Recientes</h3>
-                        <p class="no-content">No hay comentarios que mostrar.</p>
-                    </div>
-
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-folder-open"></i> Categorías</h3>
-                        <ul class="sidebar-list">
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-folder"></i>
-                                    Boletines informativos
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
             </div>
         </div>
     </section>
@@ -228,8 +206,9 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-letras-UE-PCEI.png"
-                    alt="Logo Albert Einstein" class="footer-logo-img">
+                <img src="assets/logo.png" alt="Logo Unidad Educativa PCEI Albert Einstein Latacunga"
+                    title="PCEI Albert Einstein - Educación de Calidad" class="footer-logo-img" width="200" height="80"
+                    loading="lazy">
                 <p class="footer-description">
                     Unidad Educativa PCEI<br>
                     <span class="logo-script">Albert Einstein</span>
@@ -270,7 +249,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="year"></span>  Unidad Educativa PCEI "Albert Einstein"
+            <p>&copy; <span id="year"></span> Unidad Educativa PCEI "Albert Einstein"
             </p>
         </div>
     </footer>
@@ -278,7 +257,7 @@
     <script src="https://uealberteinstein.vercel.app/assets/js/whatsapp/index.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/footer/script.js"></script>
-    
+
 </body>
 
 </html>

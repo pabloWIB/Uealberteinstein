@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requisitos para Ingreso - Unidad Educativa PCEI Albert Einstein</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -12,40 +19,40 @@
         content="Conoce los requisitos para inscribirte en el Ciclo Básico y Bachillerato Acelerado del PCEI Albert Einstein. Documentos necesarios y proceso de admisión en Latacunga.">
     <meta name="keywords"
         content="requisitos matrícula pcei, documentos inscripción bachillerato, admisión educación adultos, requisitos ciclo básico, inscripción latacunga">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uealberteinstein.edu.ec/requisitos">
     <meta property="og:title" content="Requisitos de Admisión | PCEI Albert Einstein Latacunga">
     <meta property="og:description"
         content="Conoce los requisitos para inscribirte en el Ciclo Básico y Bachillerato Acelerado. Documentos necesarios y proceso de admisión.">
-    <meta property="og:image" content="https://uealberteinstein.edu.ec/assets/logo-ue-albert-einstein-latacunga.webp">
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Requisitos de Admisión | PCEI Albert Einstein Latacunga">
     <meta name="twitter:description"
         content="Conoce los requisitos para inscribirte en el Ciclo Básico y Bachillerato Acelerado. Documentos necesarios y proceso de admisión.">
-    <meta name="twitter:image" content="https://uealberteinstein.edu.ec/assets/logo-ue-albert-einstein-latacunga.webp">
+
     <link rel="canonical" href="https://uealberteinstein.edu.ec/requisitos">
-    <link rel="icon" type="image/png"
-        href="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/requisitos/styles.css">
     <link rel="stylesheet" href="assets/css/global/styles.css">
     <link rel="stylesheet" href="assets/css/whatsapp/styles.css">
 </head>
 
+
 <body>
 
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png"
-                    alt="UE Einstein">
+                <img src="assets/logo-ue-albert-einstein-latacunga.webp" alt="Logo UE Albert Einstein PCEI Latacunga"
+                    title="Unidad Educativa PCEI Albert Einstein" width="50" height="50" loading="eager">
                 <span class="logo-text">Albert Einstein</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="/" class="nav-active">Inicio</a></li>
-                <li><a href="/conocenos">Conócenos</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/conocenos" class="nav-active">Conócenos</a></li>
                 <li><a href="/bachillerato-acelerado">Oferta Educativa</a></li>
-                <li><a href="/aula-virtual">Aula Virtual</a></li>
+                <li><a href="/aula-virtual">Servicios</a></li>
                 <li><a href="/contacto">Contacto</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
@@ -55,6 +62,20 @@
             </div>
         </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="logo-text">Albert Einstein</span>
+            <button class="close-btn" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="/" class="nav-active" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="/conocenos" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="/bachillerato-acelerado" onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="/aula-virtual" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="/contacto" onclick="toggleMenu()">Contacto</a></li>
+        </ul>
+    </div>
 
     <section class="hero">
         <div class="hero-badge">Proceso de Admisión</div>
@@ -67,7 +88,7 @@
             <div class="content-grid">
                 <div class="main-content">
                     <div class="logo-container">
-                        <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-img-grande.png"
+                        <img src="assets/logo.png"
                             alt="Logo UE Albert Einstein">
                     </div>
 
@@ -215,8 +236,9 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-letras-UE-PCEI.png"
-                    alt="Logo Albert Einstein" class="footer-logo-img">
+                <img src="assets/logo.png" alt="Logo Unidad Educativa PCEI Albert Einstein Latacunga"
+                    title="PCEI Albert Einstein - Educación de Calidad" class="footer-logo-img" width="200" height="80"
+                    loading="lazy">
                 <p class="footer-description">
                     Unidad Educativa PCEI<br>
                     <span class="logo-script">Albert Einstein</span>
@@ -257,7 +279,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="year"></span>  Unidad Educativa PCEI "Albert Einstein"
+            <p>&copy; <span id="year"></span> Unidad Educativa PCEI "Albert Einstein"
             </p>
         </div>
     </footer>
@@ -265,7 +287,7 @@
     <script src="https://uealberteinstein.vercel.app/assets/js/whatsapp/index.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/footer/script.js"></script>
-    
+
 </body>
 
 </html>

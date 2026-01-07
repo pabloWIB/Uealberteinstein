@@ -5,31 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Unidad Educativa PCEI Albert Einstein</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <meta name="description"
         content="Contacta con el PCEI Albert Einstein en Latacunga. Ubicados en Av. Eloy Alfaro y Gral. Julio Andrade. Teléfonos: 096-364-4761 / 032-809-181. Recibe asesoría sobre nuestros programas.">
     <meta name="keywords"
         content="contacto pcei latacunga, teléfono albert einstein, dirección institución educativa, información matrícula, asesoría educativa cotopaxi">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uealberteinstein.edu.ec/contacto">
     <meta property="og:title" content="Contáctanos | PCEI Albert Einstein Latacunga">
     <meta property="og:description"
         content="Contáctanos en Latacunga. Av. Eloy Alfaro y Gral. Julio Andrade. Teléfonos: 096-364-4761 / 032-809-181. Recibe asesoría sobre nuestros programas.">
-    <meta property="og:image"
-        content="https://uealberteinstein.edu.ec/assets/fachada-institucion-pcei-noche-iluminada.webp">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contáctanos | PCEI Albert Einstein Latacunga">
     <meta name="twitter:description"
         content="Contáctanos en Latacunga. Av. Eloy Alfaro y Gral. Julio Andrade. Recibe asesoría sobre nuestros programas educativos.">
-    <meta name="twitter:image"
-        content="https://uealberteinstein.edu.ec/assets/fachada-institucion-pcei-noche-iluminada.webp">
 
     <link rel="canonical" href="https://uealberteinstein.edu.ec/contacto">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/png"
-        href="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/contacto/styles.css">
     <link rel="stylesheet" href="assets/css/global/styles.css">
@@ -40,8 +42,8 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-colores-circular.png"
-                    alt="UE Einstein">
+                <img src="assets/logo-ue-albert-einstein-latacunga.webp" alt="Logo UE Albert Einstein PCEI Latacunga"
+                    title="Unidad Educativa PCEI Albert Einstein" width="50" height="50" loading="eager">
                 <span class="logo-text">Albert Einstein</span>
             </a>
             <ul class="nav-menu">
@@ -58,6 +60,20 @@
             </div>
         </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <span class="logo-text">Albert Einstein</span>
+            <button class="close-btn" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="mobile-links">
+            <li><a href="/" class="nav-active" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="/conocenos" onclick="toggleMenu()">Conócenos</a></li>
+            <li><a href="/bachillerato-acelerado" onclick="toggleMenu()">Oferta Educativa</a></li>
+            <li><a href="/aula-virtual" onclick="toggleMenu()">Aula Virtual</a></li>
+            <li><a href="/contacto" onclick="toggleMenu()">Contacto</a></li>
+        </ul>
+    </div>
 
     <section class="hero">
         <div class="hero-badge">Estamos Aquí Para Ti</div>
@@ -158,7 +174,7 @@
             <div class="modal-actions">
                 <button class="btn-modal-primary" onclick="closeThankYouModal()">Entendido</button>
                 <a href="tel:+593032810653" class="btn-modal-secondary">
-                   Llamar Ahora
+                    Llamar Ahora
                 </a>
             </div>
         </div>
@@ -179,20 +195,6 @@
                     <div class="hours-day">Sábados</div>
                     <div class="hours-time">8:00 AM - 1:00 PM</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">¿Listo para Comenzar tu Educación?</h2>
-            <p class="cta-text">
-                Descubre nuestros programas de Educación Básica Superior y Bachillerato.
-                Nunca es tarde para estudiar y alcanzar tus metas.
-            </p>
-            <div class="cta-buttons">
-                <a href="/bachillerato-acelerado" class="btn btn-dark">Ver Oferta Educativa</a>
-                <a href="/conocenos" class="btn btn-outline">Conocer Más</a>
             </div>
         </div>
     </section>
@@ -240,8 +242,9 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="https://uealberteinstein.edu.ec/wp-content/uploads/2022/01/logo-letras-UE-PCEI.png"
-                    alt="Logo Albert Einstein" class="footer-logo-img">
+                <img src="assets/logo.png" alt="Logo Unidad Educativa PCEI Albert Einstein Latacunga"
+                    title="PCEI Albert Einstein - Educación de Calidad" class="footer-logo-img" width="200" height="80"
+                    loading="lazy">
                 <p class="footer-description">
                     Unidad Educativa PCEI<br>
                     <span class="logo-script">Albert Einstein</span>
@@ -282,7 +285,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="year"></span>  Unidad Educativa PCEI "Albert Einstein"
+            <p>&copy; <span id="year"></span> Unidad Educativa PCEI "Albert Einstein"
             </p>
         </div>
     </footer>
@@ -292,7 +295,7 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/contacto/script.js"></script>
     <script src="assets/js/footer/script.js"></script>
-    
+
 </body>
 
 </html>

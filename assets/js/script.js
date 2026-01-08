@@ -1,3 +1,4 @@
+// assets/js/script.js
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('active');
@@ -29,9 +30,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 const EMAILJS_CONFIG = {
-    SERVICE_ID: 'ID',
-    TEMPLATE_ID: 'ID',
-    PUBLIC_KEY: 'KEY'
+    SERVICE_ID: 'service_t8hswkc',
+    TEMPLATE_ID: 'template_n1xnmsy',
+    PUBLIC_KEY: 'Hv_khiO1DJANJtHXj'
 };
 
 (function () {
@@ -88,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 openThankYouModal();
             })
             .catch(function (error) {
-                alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
 
                 submitButton.disabled = false;
                 if (btnText) btnText.style.display = 'inline';

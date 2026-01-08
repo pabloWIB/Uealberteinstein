@@ -60,6 +60,24 @@ nav {
   display: flex;
   gap: 2.5rem;
   list-style: none;
+  align-items: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--yellow);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  transition: 0.3s;
+  color: #1a1a1a !important;
 }
 
 .nav-menu a {

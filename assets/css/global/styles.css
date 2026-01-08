@@ -356,3 +356,17 @@ footer {
     width: 100px;
   }
 }
+
+.nav-active {
+  text-decoration: underline !important;
+  text-decoration-color: var(--dark) !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px !important;
+  transition: color 0.3s;
+}
+
+.nav-active:hover {
+  text-decoration-color: var(--yellow) !important;
+  text-decoration-thickness: 2px !important;
+  transition: color 0.3s;
+}

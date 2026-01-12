@@ -22,9 +22,9 @@ body {
 
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../graduacion-estudiantes-manos-levantadas-celebracion.webp");
+    url("../../estudiantes-recibiendo-reconocimiento-pcei-albert-einstein.webp");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   padding: 10rem 4% 8rem;
   text-align: center;
   color: var(--white);

@@ -22,10 +22,10 @@ body {
 
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../directivos-izada-bandera-patio-principal.webp");
+    url("../../directivos-entregando-reconocimientos-pcei-albert-einstein.webp");
   background-size: cover;
   background-position: center;
-  padding: 8rem 4% 6rem;
+  padding: 14rem 4% 6rem;
   text-align: center;
   color: var(--white);
 }
